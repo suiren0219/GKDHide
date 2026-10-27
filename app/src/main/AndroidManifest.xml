@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:label="GKD隐身"
+        android:icon="@drawable/ic_launcher"
+        android:allowBackup="false"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+        <!-- LSPosed 模块声明 -->
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="在目标应用中隐藏 GKD 的无障碍服务状态，帮助通过无障碍检测" />
+        <meta-data android:name="xposedminversion" android:value="53" />
+        <!-- 允许 Hook 侧通过 XSharedPreferences 读取本模块的 SharedPreferences 配置 -->
+        <meta-data android:name="xposedsharedprefs" android:value="true" />
+
+        <activity
+            android:name=".ConfigActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
